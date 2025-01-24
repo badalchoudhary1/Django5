@@ -5,7 +5,8 @@ from .models import Student, Teacher
 
 def home(request):
     # all_data = Student.objects.all() # It will give you all the data
-    # all_data = Student.objects.filter(marks=23)   # It will give you the data of marks 23
+    # It will give you the data of marks 23
+    all_data = Student.objects.filter(marks=23)
     # all_data = Student.objects.filter(name='ror') # It will give you the data of ror
     # all_data = Student.objects.exclude(name='ror') # It will exclude the data of ror
     # all_data = Student.objects.order_by('marks') # It will give you the data in ascending order
@@ -44,8 +45,8 @@ def home(request):
     # It will give you the data of both the conditions
     # all_data = Student.objects.filter(name='badal', city='karnal')
 
-    all_data = Student.objects.filter(name='badal') | Student.objects.filter(
-        city='mkmk')  # it will give you the data of any one condition which is true
+    # all_data = Student.objects.filter(name='badal') | Student.objects.filter(
+    #     city='mkmk')  # it will give you the data of any one condition which is true
 
     print(all_data)
     # print()

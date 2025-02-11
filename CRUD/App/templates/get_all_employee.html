@@ -1,0 +1,30 @@
+<h1>All Employees</h1>
+<button><a href="{% url 'create_employee' %}">ADD Employee</a></button>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Email</th>
+            <th>Employee Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in Employees %}
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.password }}</td>
+
+            <td>
+                <button><a href="{% url 'update_employee' employee.id %}">Update</a></button>
+                <button><a href="{% url 'delete_employee' employee.id %}">Delete</a></button>
+            </td>
+             
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
